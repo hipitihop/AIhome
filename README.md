@@ -34,6 +34,9 @@ or
 ./wsgi.py
 ```
 
+To log in the default is **admin/admin**
+You can change the password inside the web console
+
 # Information
 
 As you start using your devices around the house, the system will start to build a list of sites and the logs will start to grow
