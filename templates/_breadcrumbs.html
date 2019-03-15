@@ -1,0 +1,68 @@
+<!--
+
+Project: Snips Web Admin
+Created Date: Sunday, March 10th 2019, 9:39:25 am
+Author: Greg
+-----
+Last Modified: Thu Mar 14 2019
+Modified By: Greg
+-----
+Copyright (c) 2019 Greg
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+
+
+
+
+
+{% macro render_breadcrumbs(bar) -%}
+    {% if bar %}
+        <div class="row page-titles">
+            <div class="col-md-5 col-8 align-self-center">
+                <h3 class="text-themecolor">{{ bar.title }}</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">{{ bar.link }}</li>
+                </ol>
+            </div>
+            <div class="col-md-7 col-4 align-self-center">
+                <div class="d-flex justify-content-end">
+                    {% if bar.link == "Overview" %}
+                    <ul class="nav nav-tabs customtab" role="tablist" id="timePeriodTab">
+                            <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="30" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 30 Days</span><span class="hidden-xs-up">30d</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="7" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 7 Days</span><span class="hidden-xs-up">7d</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="1" role="tab" aria-selected="true"></span> <span class="hidden-xs-down">Last 24 Hours</span><span class="hidden-xs-up">24h</span></a> </li>
+                    </ul>
+                    {% endif %}
+                    {% if bar.link == "Timeline" %}
+                    <div>
+                        
+                        <select id="timelineSites" class="select-box" id="inputGroupSelect01">
+                            
+                            
+                          </select>
+                        
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{%- endmacro %}

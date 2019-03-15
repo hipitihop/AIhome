@@ -1,0 +1,75 @@
+<!--
+
+Project: Snips Web Admin
+Created Date: Saturday, March 9th 2019, 3:28:10 pm
+Author: Greg
+-----
+Last Modified: Sat Mar 09 2019
+Modified By: Greg
+-----
+Copyright (c) 2019 Greg
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+
+
+{% extends 'base.html' %}
+{% from "security/_macros.html" import render_field_with_errors,render_field, render_username_with_errors %}
+{% include "security/_messages.html" %}
+
+{% block head %}
+
+{% endblock %}
+{% block page_body %}
+
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(../static/images/background/AI-bg.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+                        <h3 class="box-title m-b-20">Sign In</h3>
+                        {{ login_user_form.hidden_tag() }}
+                        {{ render_username_with_errors(login_user_form.email) }}
+                        {{ render_field_with_errors(login_user_form.password) }}
+                        {{ render_field(login_user_form.next) }}
+
+                        <div class="form-group">
+                            <div class="d-flex no-block align-items-center">
+                                <div class="checkbox checkbox-primary p-t-0">
+                                    <input id="checkbox-signup" type="checkbox">
+                                    <label for="checkbox-signup"> Remember me </label>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="form-group text-center m-t-20">
+                            <div class="col-xs-12">
+                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light waves-button-input" type="submit">Login</button>
+                                
+                              
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock page_body %}
+

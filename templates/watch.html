@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% from "_watch_item.html" import render_timeline_item %}
+{% block head_meta %}
+    {{ super() }}
+
+    
+    {% if not current_user.is_authenticated %}
+        <meta http-equiv="refresh" content="0; url={{ url_for('security.login') }}"/>
+    {% endif %}
+    
+{% endblock %}
+{% block body %}
+    {{ super() }}
+   
+  
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div id="timelineview" class="card-body timelineview">
+                    <ul id="timelinelist" class="timeline">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="myBtn" onclick="scrolltotop_fn()" class="btn btn-danger btn-circle"><i class="mdi mdi-24px mdi-format-vertical-align-top"></i> </button>
+
+
+        <!-- /.content -->
+ 
+
+{% endblock body %}

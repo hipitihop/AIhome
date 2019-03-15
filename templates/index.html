@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block head_meta %}
+    {{ super() }}
+
+    
+    {% if not current_user.is_authenticated %}
+        <meta http-equiv="refresh" content="0; url={{ url_for('security.login') }}"/>
+    {% endif %}
+{% endblock %}
+{% block body %}
+    {{ super() }}
+   
+  
+
+        
+
+       <!-- Row -->
+       <div class="card-group">
+            <!-- Column -->
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-center">Wakewords</h4>
+                    <div id="spark8"></div>
+                </div>
+                <div class="box  text-center">
+                    <h4 id="wakewordcount" class="font-medium m-b-0">--</h4></div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-center">Intents Found</h4>
+                    <div id="spark9"></div>
+                </div>
+                <div class="box  text-center">
+                    <h4 id="intentsfound" class="font-medium m-b-0">--</h4></div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-center">Unknown Intents</h4>
+                    <div id="spark10"></div>
+                </div>
+                <div class="box  text-center">
+                    <h4 id="unknownintents" class="font-medium m-b-0">--</h4></div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="text-center">Errors</h4>
+                    <div id="spark11"></div>
+                </div>
+                <div class="box  text-center">
+                    <h4 id="errors" class="font-medium m-b-0">--</h4></div>
+            </div>
+            <!-- Column -->
+        </div>
+
+        <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Top 10 Intents</h4>
+                                <h6 class="card-subtitle">Most used intents during selected time period</h6>
+                                <div id="amp-pxl" class="amp-pxl" style="height: 300px;">
+                                        <div id="blankgraph" class="d-flex align-items-center" style="visibility: hidden;">
+                                            <div class="d-flex justify-content-center" style="width: 100%;">
+                                                Nothing to show
+                                            </div>
+                                        </div>
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+        <!-- /.content -->
+ 
+
+{% endblock body %}
