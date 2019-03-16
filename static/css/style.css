@@ -4059,10 +4059,19 @@ Timeline page
 .timeline > li > .dm-bg:after {
     border-right: 0 solid rgb(249, 249, 206);}
 
+/* NLU*/
+.timeline-badge.nlu {
+    padding-top: 6px;
+    background-color: #FF8040; }
+.nlu-bg {
+    background-color: rgb(255, 204, 179); }
+.timeline > li > .nlu-bg:after {
+    border-right: 0 solid rgb(255, 204, 179);}
+
 /* intent*/
 .timeline-badge.intent {
-    padding-left: 4px;
-    padding-top: 2px;
+    padding-left: 0px;
+    padding-top: 6px;
     background-color: rgb(137, 73, 177); }
 .intent-bg {
     background-color: rgb(235, 209, 252); }

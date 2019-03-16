@@ -73,7 +73,7 @@ def handle_connect(client, userdata, flags, rc):
     mqtt.subscribe('hermes/intent/#')
     mqtt.subscribe('hermes/nlu/intentNotRecognized')
     #mqtt.subscribe('hermes/nlu/intentParsed') - not for production
-    #mqtt.subscribe('hermes/nlu/query')
+    mqtt.subscribe('hermes/nlu/query')
     mqtt.subscribe('hermes/nlu/slotParsed')
     mqtt.subscribe('hermes/error/nlu')
     mqtt.subscribe("hermes/asr/textCaptured")

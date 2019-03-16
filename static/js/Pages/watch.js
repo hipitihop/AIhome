@@ -4,7 +4,7 @@
  * Created Date: Tuesday, March 12th 2019, 11:44:02 pm
  * Author: Greg
  * -----
- * Last Modified: Fri Mar 15 2019
+ * Last Modified: Sat Mar 16 2019
  * Modified By: Greg
  * -----
  * Copyright (c) 2019 Your Company
@@ -77,12 +77,12 @@ $(document).ready(function () {
                                 break; 
                             case 2:
                                 //nlu
-                                html += ' <div class="timeline-badge nlu"><i class="fa fa-comment-dots"></i> </div> \
+                                html += ' <div class="timeline-badge nlu"><i class="mdi mdi-36px mdi-target-variant"></i> </div> \
                                     <div class="timeline-panel nlu-bg">';
                                 break; 
                             case 3:
                                 //tts
-                                html += ' <div class="timeline-badge tts"><i class="fa fa-comment-dots"></i> </div> \
+                                html += ' <div class="timeline-badge tts"><i class="mdi mdi-36px mdi-voice"></i> </div> \
                                         <div class="timeline-panel tts-bg">';
                                 break; 
                             case 4:
@@ -102,7 +102,7 @@ $(document).ready(function () {
                                 break; 
                             case 7:
                                 //intents
-                                html += ' <div class="timeline-badge intent"><i class="fa fa-code-branch"></i> </div> \
+                                html += ' <div class="timeline-badge intent"><i class="mdi mdi-36px mdi-code-braces"></i> </div> \
                                         <div class="timeline-panel intent-bg">';
                                 break; 
                             case 8:

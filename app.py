@@ -184,6 +184,6 @@ if not database_exists(db.engine.url):
 #now create the api and mqtt services etc
 init_objects(app)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+#if __name__ == '__main__':
+app.run(host='0.0.0.0', port=80)
     #app.run()
