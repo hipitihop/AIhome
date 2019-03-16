@@ -7,7 +7,7 @@
 # Created Date: Friday, March 15th 2019, 10:01:38 pm
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -65,7 +65,7 @@ class Services(Resource):
                 if 'snips-skill-server' in s:
                     status['skillserver'] = 1
                 if 'snips-audio-server' in s:
-                    status['skillserver'] = 1
+                    status['audioserver'] = 1
 
         return status
 
