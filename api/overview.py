@@ -7,7 +7,7 @@
 # Created Date: Sunday, March 10th 2019, 1:45:08 pm
 # Author: Greg
 # -----
-# Last Modified: Wed Mar 13 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -67,10 +67,19 @@ class Overview(Resource):
     
             newArray = []
             total = 0
-            
+            #print("objArray",objArray)
             if steps == 1:
-                for x in range(start, end, steps):
-                    #does the objArray contain a value for this range.. if not create a blank one with zero
+
+                #putting the array into the hour order like 4pm - 3am
+                hoursbefore = datetime.today() - timedelta(days = 1)
+                if hoursbefore == 0:
+                    hoursbefore = 23
+                else:   
+                    hoursbefore = hoursbefore.hour + 1
+                    
+                hoursnow = datetime.today().hour + 1
+                
+                for x in range(hoursbefore, 24, 1):
                     result = [element for element in objArray if element[1] == x]
                     if len(result) > 0:
                         #found
@@ -79,6 +88,16 @@ class Overview(Resource):
                         newArray.append(t)
                     else:
                         newArray.append(0)
+                for x in range(0, hoursnow, 1):
+                    result = [element for element in objArray if element[1] == x]
+                    if len(result) > 0:
+                        #found
+                        t = result[0][0]
+                        total += t
+                        newArray.append(t)
+                    else:
+                        newArray.append(0)
+
             else:
                 #days looping
                 j = 0
@@ -132,7 +151,6 @@ class Overview(Resource):
                             group_by(extract(group_word,Mqttlog.timestamp)).all()
 
 
-       
 
         intent_count = None
         if daysbefore > 1:
