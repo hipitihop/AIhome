@@ -7,7 +7,7 @@
 # Created Date: Sunday, March 10th 2019, 3:45:18 pm
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -88,8 +88,6 @@ def handle_connect(client, userdata, flags, rc):
 
 @mqtt.on_message()
 def handle_mqtt_message(client, userdata, message):
-    #print("message.topic",message.topic)
-    #print("message.payload",message.payload)
 
     dic = {}
     topic = message.topic
@@ -219,7 +217,6 @@ def handle_mqtt_message(client, userdata, message):
             dic['intent'] = payload['intent']['intentName']
             dic['confidenceScore'] = payload['intent']['confidenceScore']
             if 'slots' in payload:
-                print("\n\n\n\nSLOTS!!!!\n\n\n\n\n")
                 for slotitem in payload['slots']:
                     new_slot = Slots(rawValue=slotitem['rawValue'],
                                     kind=slotitem['value']['kind'],
