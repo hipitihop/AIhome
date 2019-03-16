@@ -7,7 +7,7 @@
 # Created Date: Wednesday, March 13th 2019, 10:00:08 am
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -33,13 +33,11 @@
 
 
 
-#from sqlalchemy.orm import aliased
 from . import api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, desc, extract, Date, cast, or_, and_
 from models import Site, Mqttlog, SessionEndedReason, HermesComponent, Slots
 from app import db
-#from datetime import datetime, timedelta
 from sqlalchemy.types import TIME, DATE
 import json
 from sqlalchemy.orm import lazyload, aliased
@@ -56,19 +54,10 @@ class MqttLogView(Resource):
 
         rows50 = []
         if site_id == 0:
-            #rows50 = db.session.query(Mqttlog).options(lazyload('site')). \
-            #                filter(Mqttlog.timestamp < fromdate). \
-            #                order_by(desc(Mqttlog.id)).limit(21).all()
             rows50 = db.session.query(Mqttlog).options(lazyload('site')). \
                             filter(Mqttlog.timestamp < fromdate). \
                             order_by(desc(Mqttlog.timestamp)).limit(21).all()
         else:
-            
-            #selected_site_id = db.session.query(Site.id).filter(Site.name == site_id).first
-            #selected_site = Site.query.filter_by(name = site_id).first()
-            
-            #if selected_site:
-            #site_id = selected_site.id
             a = aliased(Mqttlog)
             b = aliased(Mqttlog)
             rows50 = db.session.query(a).distinct()

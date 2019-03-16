@@ -7,7 +7,7 @@
 # Created Date: Wednesday, March 13th 2019, 8:53:15 am
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -36,14 +36,13 @@
 from . import db, Site
 from sqlalchemy import Table, Column, String, Integer, DateTime, ForeignKey, Boolean, func
 from sqlalchemy_utils import ChoiceType
-#from sqlalchemy.orm import relationship
 from flask_addins.serializer import SerializerMixin
 
 
 class Slots(db.Model, SerializerMixin):
 
-    serialize_only = ('id','rawValue','kind','value','entity','slotName','confidenceScore')   # Define custom schema here if needed
-    serialize_rules = ()#('-slots_id.mqttlog_id')  # Define custom schema here if needed
+    serialize_only = ('id','rawValue','kind','value','entity','slotName','confidenceScore')  
+    serialize_rules = ()
 
     __tablename__ = 'slots'
     id = Column(Integer, primary_key = True, autoincrement=True)

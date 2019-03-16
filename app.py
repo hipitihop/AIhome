@@ -7,7 +7,7 @@
 # Created Date: Friday, March 8th 2019, 4:43:06 pm
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -48,28 +48,24 @@ import click
 
 
 
-
-
-
-
 #============================================================== 
 # Error page routes 
 #==============================================================
 
 def page_not_found(e):
-  return render_template('error/pages-error-404.html'), 404
+    return render_template('error/pages-error-404.html'), 404
 
 def page_not_found_400(e):
-  return render_template('error/pages-error-400.html'), 400
+    return render_template('error/pages-error-400.html'), 400
 
 def page_forbiddon(e):
-  return render_template('error/pages-error-403.html'), 403
+    return render_template('error/pages-error-403.html'), 403
 
 def page_server_error(e):
-  return render_template('error/pages-error-500.html'), 500
+    return render_template('error/pages-error-500.html'), 500
 
 def page_service_unavailable(e):
-  return render_template('error/pages-error-503.html'), 503
+    return render_template('error/pages-error-503.html'), 503
 
 #============================================================== 
 # FLASK
@@ -88,20 +84,18 @@ app.register_error_handler(404, page_not_found)
 app.register_error_handler(500, page_server_error)
 app.register_error_handler(503, page_service_unavailable)
 
-#with app.app_context():
+
 db.init_app(app)
 db.app = app
 
 def init_objects(app):
-  from api import api
-  #with app.app_context():
-  api.init_app(app)
-  api.app = app
+    from api import api
+    api.init_app(app)
+    api.app = app
 
-  from service.mqttService import mqtt
-  #with app.app_context():
-  mqtt.init_app(app)
-  mqtt.app = app
+    from service.mqttService import mqtt
+    mqtt.init_app(app)
+    mqtt.app = app
 
 
 migrate = Migrate(app, db)
@@ -144,8 +138,8 @@ atexit.register(lambda: sched.shutdown(wait=False))
 @app.route("/")
 @login_required
 def dashboard_overview():
-  bar = {"title":"Dashboard","link":"Overview"}
-  return render_template('index.html',bar=bar,includeJS="overview")
+    bar = {"title":"Dashboard","link":"Overview"}
+    return render_template('index.html',bar=bar,includeJS="overview")
 
 @app.route("/watch")
 @login_required
@@ -161,11 +155,11 @@ def watch_log_viewer():
 @app.cli.command()
 @click.argument('password')
 def set_password(password):
-  with app.app_context():
-    admin_user = user_datastore.get_user(1)
-    if (admin_user):
-      admin_user.password = encrypt_password(password)
-      db.session.commit()
+    with app.app_context():
+        admin_user = user_datastore.get_user(1)
+        if (admin_user):
+            admin_user.password = encrypt_password(password)
+            db.session.commit()
 
 
 #if there is no DB create it and setup default data
@@ -173,20 +167,20 @@ if not database_exists(db.engine.url):
     db.create_all()
     #create admin/admin default account
     with app.app_context():
-      super_admin_role = Role(name = 'superadmin')
-      admin_role = Role(name = 'admin')
-      db.session.add(super_admin_role)
-      db.session.add(admin_role)
-      db.session.commit()
+        super_admin_role = Role(name = 'superadmin')
+        admin_role = Role(name = 'admin')
+        db.session.add(super_admin_role)
+        db.session.add(admin_role)
+        db.session.commit()
 
-      admin_user = user_datastore.create_user(
-        email = 'admin',
-        password = encrypt_password('admin'),
-        roles = [super_admin_role, admin_role]
-      )
-      db.session.add(admin_user)
-      db.session.commit()
-  
+        admin_user = user_datastore.create_user(
+            email = 'admin',
+            password = encrypt_password('admin'),
+            roles = [super_admin_role, admin_role]
+        )
+        db.session.add(admin_user)
+        db.session.commit()
+
 #now create the api and mqtt services etc
 init_objects(app)
 

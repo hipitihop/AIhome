@@ -7,7 +7,7 @@
 # Created Date: Friday, March 8th 2019, 4:43:06 pm
 # Author: Greg
 # -----
-# Last Modified: Fri Mar 15 2019
+# Last Modified: Sat Mar 16 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -36,5 +36,4 @@
 from app import app as application
 
 if __name__ == "__main__":
-    #application.run()
     application.run(host='0.0.0.0', port=application.config['PORT'])

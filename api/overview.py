@@ -33,7 +33,6 @@
 
 
 
-#from sqlalchemy.orm import aliased
 from . import api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func,desc,extract,Date,cast
@@ -127,15 +126,6 @@ class Overview(Resource):
                             group_by(Mqttlog.hermesTopic).order_by(desc('count')).limit(10).all()
 
 
-        #filter the data from X till now to return only those records
-        #filter_after = datetime.today() - timedelta(days = daysbefore)
-        #rows = db.session.query(func.count(Mqttlog.id)).filter(Mqttlog.timestamp >= filter_after).count()
-    
-
-        #ww_count = db.session.query(db.func.count(Mqttlog.id)). \
-        #            filter(Mqttlog.hermesTopic == 'detected',
-        #                    Mqttlog.timestamp >= filter_after). \
-        #                scalar()  #.filter(Services.dateAdd.between(start, end))
         ww_count = None
         if daysbefore > 1:
             ww_count = db.session.query(func.count(Mqttlog.id),extract(group_word,Mqttlog.timestamp),
@@ -149,7 +139,6 @@ class Overview(Resource):
                             filter(Mqttlog.hermesTopic == 'detected',
                                 Mqttlog.timestamp >= filter_after). \
                             group_by(extract(group_word,Mqttlog.timestamp)).all()
-
 
 
         intent_count = None
@@ -180,6 +169,7 @@ class Overview(Resource):
                             filter(Mqttlog.hermesTopic == 'intentNotRecognized',
                                 Mqttlog.timestamp >= filter_after). \
                             group_by(extract(group_word,Mqttlog.timestamp)).all()
+
 
         error_count = None
         if daysbefore > 1:
