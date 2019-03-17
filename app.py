@@ -7,7 +7,7 @@
 # Created Date: Friday, March 8th 2019, 4:43:06 pm
 # Author: Greg
 # -----
-# Last Modified: Sat Mar 16 2019
+# Last Modified: Mon Mar 18 2019
 # Modified By: Greg
 # -----
 # Copyright (c) 2019 Greg
@@ -33,7 +33,7 @@
 
 
 
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, abort
 from flask_migrate import Migrate
 from flask_security import Security, login_required, SQLAlchemyUserDatastore
 from flask_admin import helpers as admin_helpers
@@ -138,14 +138,21 @@ atexit.register(lambda: sched.shutdown(wait=False))
 @app.route("/")
 @login_required
 def dashboard_overview():
-    bar = {"title":"Dashboard","link":"Overview"}
+    bar = {"title":"Dashboard","link":"Overview","menu":"overview"}
     return render_template('index.html',bar=bar,includeJS="overview")
 
 @app.route("/watch")
 @login_required
 def watch_log_viewer():
-    bar = {"title":"Dashboard","link":"Watch Log","link":"Timeline"}
+    bar = {"title":"Dashboard","link":"Watch Log","menu":"timeline"}
     return render_template('watch.html',bar=bar,includeJS="watch")
+
+@app.route("/intent")
+@login_required
+def nlu_viewer():
+    bar = {"title":"Natural Learning Understanding","link":"Management","menu":"intents"}
+    return render_template('intent.html',bar=bar)
+
 
 
 #============================================================== 
@@ -185,5 +192,5 @@ if not database_exists(db.engine.url):
 init_objects(app)
 
 #if __name__ == '__main__':
-app.run(host='0.0.0.0', port=80)
+app.run(host='0.0.0.0', port=app.config['PORT'])
     #app.run()

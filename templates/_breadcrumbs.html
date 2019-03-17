@@ -4,7 +4,7 @@ Project: Snips Web Admin
 Created Date: Sunday, March 10th 2019, 9:39:25 am
 Author: Greg
 -----
-Last Modified: Thu Mar 14 2019
+Last Modified: Sun Mar 17 2019
 Modified By: Greg
 -----
 Copyright (c) 2019 Greg
@@ -38,28 +38,30 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             <div class="col-md-5 col-8 align-self-center">
                 <h3 class="text-themecolor">{{ bar.title }}</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li> -->
                     <li class="breadcrumb-item active">{{ bar.link }}</li>
                 </ol>
             </div>
             <div class="col-md-7 col-4 align-self-center">
                 <div class="d-flex justify-content-end">
-                    {% if bar.link == "Overview" %}
+                    {% if bar.menu == "overview" %}
                     <ul class="nav nav-tabs customtab" role="tablist" id="timePeriodTab">
-                            <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="30" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 30 Days</span><span class="hidden-xs-up">30d</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="7" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 7 Days</span><span class="hidden-xs-up">7d</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="30" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 30 Days</span><span class="hidden-xs-up">30d</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="7" role="tab" aria-selected="false"><span class="hidden-xs-down">Last 7 Days</span><span class="hidden-xs-up">7d</span></a> </li>
                         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="1" role="tab" aria-selected="true"></span> <span class="hidden-xs-down">Last 24 Hours</span><span class="hidden-xs-up">24h</span></a> </li>
                     </ul>
                     {% endif %}
-                    {% if bar.link == "Timeline" %}
-                    <div>
-                        
-                        <select id="timelineSites" class="select-box" id="inputGroupSelect01">
-                            
-                            
-                          </select>
-                        
-                    </div>
+                    {% if bar.menu == "timeline" %}
+        
+                        <select id="timelineSites" class="selectpicker" data-style="btn-themecolor" data-width="200px">
+                        </select>
+              
+                    {% endif %}
+                    {% if bar.menu == "intents" %}
+                    <ul class="nav nav-tabs customtab" role="tablist" id="intentsTab">
+                        <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="slots" role="tab" aria-selected="false"><span class="hidden-xs-down">Slots</span><span class="hidden-xs-up">Slots</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="intents" role="tab" aria-selected="true"></span> <span class="hidden-xs-down">Intents</span><span class="hidden-xs-up">Intents</span></a> </li>
+                    </ul>
                     {% endif %}
                 </div>
             </div>

@@ -59,9 +59,9 @@ loadSiteDictionary()
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
     mqtt.unsubscribe_all()
-    """mqtt.subscribe('hermes/tts/say')
+    #mqtt.subscribe('hermes/tts/say')
     #mqtt.subscribe('hermes/feedback/sound/toggleOff')
-    #mqtt.subscribe('hermes/feedback/sound/toggleOn')"""
+    #mqtt.subscribe('hermes/feedback/sound/toggleOn')
     mqtt.subscribe('hermes/audioServer/+/playFinished')
     mqtt.subscribe('hermes/audioServer/+/playBytes/#')
     mqtt.subscribe('hermes/dialogueManager/startSession')

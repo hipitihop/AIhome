@@ -8,8 +8,21 @@
 # Port to run site on
 PORT = 80
 
+#Theme 
+# 1 - dark theme
+# 2 - light theme
+THEME = 1
+
+#Theme colour scheme
+# 1 - green
+# 2 - blue
+# 3 - red
+# 4 - purple
+THEME_COLOUR = 2
+
+
 # MQTT
-MQTT_BROKER_URL = '10.0.1.100'  # broker url
+MQTT_BROKER_URL = 'localhost'  # broker url
 MQTT_BROKER_PORT = 1883  # default port for non-tls connection
 MQTT_USERNAME = ''  # set the username here if you need authentication for the broker
 MQTT_PASSWORD = ''  # set the password here if the broker demands authentication

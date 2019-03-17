@@ -1,0 +1,238 @@
+/*
+ * 
+ * Project: Snips Web Admin
+ * Created Date: Sunday, March 17th 2019, 8:23:01 pm
+ * Author: Greg
+ * -----
+ * Last Modified: Sun Mar 17 2019
+ * Modified By: Greg
+ * -----
+ * Copyright (c) 2019 Greg
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ */
+
+
+
+
+ body {
+    font-weight: 300 !important; 
+    line-height: 1 !important;
+  }
+
+ .badge-active {
+    background: #28a745;
+  }
+  
+  .hide-menu {
+      padding-top:10px !important;
+      line-height: 1 !important;
+  }
+  
+  .mdi:before, .mdi-set {
+      line-height:1 !important;
+  }
+  
+  .table thead th, .table th {
+    font-weight: 0 !important; }
+  
+  #myBtn {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      bottom: 20px; /* Place the button at the bottom of the page */
+      right: 30px; /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      
+      cursor: hand; /* Add a mouse pointer on hover */
+      padding: 0px; /* Some padding */
+  }
+  
+  span.help-block {
+    color: #ffb22b;
+  }
+
+  .page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "/" !important;
+  }
+
+  .form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+  float: none; 
+  color: white !important;
+}
+
+  .table-sm td, .table-sm th {
+      padding-left: 0 !important;
+  }
+
+.sidebar-nav > ul > li > a i { 
+    padding-top: 2px !important; }
+.sidebar-nav > ul > li > a .label {
+    float: right !important;
+    margin-top: 66px !important; }
+.sidebar-nav ul li.nav-small-cap {
+    padding: 14px 14px 14px 0px  !important;
+}
+
+.timeline {
+    max-width: 4200px !important;
+    margin: 0px auto !important; 
+}
+
+.timeline:before {
+    left: 0% !important;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+    line-height: 1.5 !important;
+    width:100% !important; 
+}
+
+.timeline > li > .timeline-badge {
+    top: 10px !important;
+    left: 0% !important;
+}
+
+.timeline-heading .text-muted {
+    color:black !important;
+}
+.timeline-title {
+    font-weight: 500 !important; 
+}
+
+.timeline > li > .timeline-panel {
+    margin-left: 50px !important;
+}
+
+/* timeline hermes types */
+.timeline-panel {
+    color:black !important;
+}
+/* wakeword*/
+.timeline-badge.wakeword {
+    padding-top: 5px;
+    background-color: rgb(73, 177, 80); }
+.wakeword-bg {
+    background-color: #e8fdeb; }
+.timeline > li > .wakeword-bg:after {
+    border-right: 0 solid #e8fdeb;
+}
+    
+/* ASR*/
+.timeline-badge.asr {
+    padding-top: 8px ;
+    background-color: rgb(77, 95, 199); }
+.asr-bg {
+    background-color: rgb(197, 205, 250); }
+.timeline > li > .asr-bg:after {
+    border-right: 0 solid rgb(197, 205, 250);}
+    
+/* DM*/
+.timeline-badge.dm {
+    padding-top: 5px;
+    background-color: rgb(212, 212, 16); }
+.dm-bg {
+    background-color: rgb(249, 249, 206); }
+.timeline > li > .dm-bg:after {
+    border-right: 0 solid rgb(249, 249, 206);}
+    
+/* NLU*/
+.timeline-badge.nlu {
+    padding-top: 6px;
+    background-color: #FF8040; }
+.nlu-bg {
+    background-color: rgb(255, 204, 179); }
+.timeline > li > .nlu-bg:after {
+    border-right: 0 solid rgb(255, 204, 179);}
+    
+/* intent*/
+.timeline-badge.intent {
+    padding-left: 0px;
+    padding-top: 6px;
+    background-color: rgb(137, 73, 177); }
+.intent-bg {
+    background-color: rgb(235, 209, 252); }
+.timeline > li > .intent-bg:after {
+    border-right: 0 solid rgb(235, 209, 252);
+}
+    
+/* audioserver*/
+.timeline-badge.audioserver {
+    padding-top: 7px;
+    background-color: rgb(255, 162, 1); }
+.audioserver-bg {
+    background-color: rgb(247, 213, 155); }
+.timeline > li > .audioserver-bg:after {
+    border-right: 0 solid rgb(247, 213, 155);
+}
+
+/* error*/
+.timeline-badge.error {
+    padding-top: 6px;
+    background-color: rgb(245, 43, 43); }
+.error-bg {
+    background-color: rgb(250, 155, 155); }
+.timeline > li > .error-bg:after {
+    border-right: 0 solid rgb(250, 155, 155);
+}
+
+.sidebar-nav > ul > li > a i {
+    padding-top: 2px !important; }
+
+.select-box {
+    background-color: #288AE2; 
+    color: white;
+}
+
+@media (min-width: 575px) { 
+    .hidden-xs-up {
+      display: none !important; } 
+}
+
+@media (min-width: 768px) {
+    .ct-bar {
+        stroke-width: 30px !important;
+    }
+    .timelineview {
+        padding-left: 50px !important;  
+      }
+}
+
+@media (max-width: 767px) {
+    .timeline > li > .timeline-panel {
+        margin-left: 0px !important;
+    }
+    .timeline > li > .timeline-panel {
+        padding: 10px !important;
+    }
+    .timeline > li > .timeline-panel:after {
+        visibility: hidden !important;
+    }
+    .timeline:before {
+        width:0px !important;
+    }
+    .timelineview {
+        padding-left: 20px !important;  
+    } 
+}
+
+@media (max-width: 767px) {
+    ul.timeline > li > .timeline-badge {
+        visibility: hidden !important; }
+}

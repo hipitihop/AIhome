@@ -4,7 +4,7 @@
  * Created Date: Tuesday, March 12th 2019, 11:44:02 pm
  * Author: Greg
  * -----
- * Last Modified: Sat Mar 16 2019
+ * Last Modified: Sun Mar 17 2019
  * Modified By: Greg
  * -----
  * Copyright (c) 2019 Your Company
@@ -31,13 +31,29 @@ $(document).ready(function () {
             
             //load all the different sites from the system into a select box to filter log view
             siteIDList = data;
-            btns.push('<option value="0">All Sites</option>');
+            //btns.push('<option selected value="0" data-tokens="0">All Sites</option>');
+            btns.push('<option selected value="0">All Sites</option>');
+
             for(var i = 0; i < data.length; i++) {
                 var item = data[i];
+                //btns.push('<option value="' + item['id'] + '">' + item['name'] + '</option>');
+                //btns.push('<option value="' + item['id'] + '" data-tokens="' + item['id'] + 'd">' + item['name'] + '</option>');
                 btns.push('<option value="' + item['id'] + '">' + item['name'] + '</option>');
             }
         }
+
+
         $("#timelineSites").html(btns);
+
+        $('#timelineSites').selectpicker('refresh');
+
+        if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))) {
+            var elements = document.querySelectorAll('.mobile-device'); 
+            for(var i = 0; i < elements.length; i++)
+            {
+                elements[i].classList.remove('mobile-device');
+            }
+        } 
     });
 
     

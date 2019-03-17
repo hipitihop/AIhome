@@ -1,11 +1,11 @@
 /*
-Template Name: Monster Admin
+Template Name: Material Pro Admin
 Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: scss
 */
 /*
-Template Name: Monster Admin
+Template Name: Material Pro Admin
 Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: scss
@@ -36,11 +36,14 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-  background: #1e88e5;
-}
-
-.topbar .navbar-header {
-  background: rgba(0, 0, 0, 0.05);
+  background: #7460ee;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #533fd0 0%, #840fb5 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #533fd0 0%, #840fb5 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #533fd0 0%, #840fb5 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .topbar .top-navbar .navbar-header .navbar-brand .dark-logo {
@@ -53,22 +56,26 @@ File: scss
 }
 
 .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: #ffffff !important;
 }
 
 /*******************
 /*General Elements
 *******************/
+a {
+  color: #7460ee;
+}
+
 a.link:hover, a.link:focus {
-  color: #1e88e5 !important;
+  color: #7460ee !important;
 }
 
 .bg-theme {
-  background-color: #1e88e5 !important;
+  background-color: #7460ee !important;
 }
 
 .pagination > .active > a,
@@ -77,31 +84,31 @@ a.link:hover, a.link:focus {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #1e88e5;
-  border-color: #1e88e5;
+  background-color: #7460ee;
+  border-color: #7460ee;
 }
 
 .right-sidebar .rpanel-title {
-  background: #1e88e5;
+  background: #7460ee;
 }
 
 .stylish-table tbody tr:hover, .stylish-table tbody tr.active {
-  border-left: 4px solid #1e88e5;
+  border-left: 4px solid #7460ee;
 }
 
 .text-themecolor {
-  color: #1e88e5 !important;
+  color: #7460ee !important;
 }
 
 .profile-tab li a.nav-link.active,
 .customtab li a.nav-link.active {
-  border-bottom: 2px solid #1e88e5;
-  color: #1e88e5;
+  border-bottom: 2px solid #7460ee;
+  color: #7460ee;
 }
 
 .profile-tab li a.nav-link:hover,
 .customtab li a.nav-link:hover {
-  color: #1e88e5;
+  color: #7460ee;
 }
 
 /*******************
@@ -109,16 +116,16 @@ a.link:hover, a.link:focus {
 *******************/
 .btn-themecolor,
 .btn-themecolor.disabled {
-  background: #1e88e5;
+  background: #7460ee;
   color: #ffffff;
-  border: 1px solid #1e88e5;
+  border: 1px solid #7460ee;
 }
 
 .btn-themecolor:hover,
 .btn-themecolor.disabled:hover {
-  background: #1e88e5;
+  background: #7460ee;
   opacity: 0.7;
-  border: 1px solid #1e88e5;
+  border: 1px solid #7460ee;
 }
 
 .btn-themecolor.active, .btn-themecolor:focus,
@@ -139,7 +146,7 @@ a.link:hover, a.link:focus {
 }
 
 .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
-  color: #26c6da;
+  color: #7460ee;
 }
 
 .sidebar-nav ul li a.active {
@@ -152,7 +159,7 @@ a.link:hover, a.link:focus {
 
 .sidebar-nav > ul > li.active > a, .sidebar-nav > ul > li.active:hover > a {
   color: #ffffff !important;
-  background: #26c6da !important;
+  background: #7460ee !important;
 }
 
 .sidebar-nav > ul > li.active > a i, .sidebar-nav > ul > li.active:hover > a i {
@@ -164,7 +171,7 @@ a.link:hover, a.link:focus {
 }
 
 .sidebar-nav > ul > li > a.active i, .sidebar-nav > ul > li > a:hover i {
-  color: #26c6da;
+  color: #7460ee;
 }
 
 .sidebar-nav > ul > li > a i {
@@ -174,5 +181,6 @@ a.link:hover, a.link:focus {
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
   background: #ffffff;
-  color: #1e88e5;
+  color: #7460ee;
 }
+
