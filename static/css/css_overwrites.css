@@ -4,7 +4,7 @@
  * Created Date: Sunday, March 17th 2019, 8:23:01 pm
  * Author: Greg
  * -----
- * Last Modified: Sun Mar 17 2019
+ * Last Modified: Mon Mar 18 2019
  * Modified By: Greg
  * -----
  * Copyright (c) 2019 Greg
@@ -199,6 +199,10 @@
     background-color: #288AE2; 
     color: white;
 }
+
+.right-sidebar .rpanel-title {
+    height: 70px;
+  }
 
 @media (min-width: 575px) { 
     .hidden-xs-up {

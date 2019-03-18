@@ -29,11 +29,9 @@ File: scss
 /*Normal Color*/
 /*Extra Variable*/
 /*Preloader*/
-@import url(../css/icons/font-awesome/css/fontawesome-all.css);
-@import url(../css/icons/simple-line-icons/css/simple-line-icons.css);
+
 @import url(../css/icons/weather-icons/css/weather-icons.min.css);
-@import url(../css/icons/linea-icons/linea.css);
-@import url(../css/icons/themify-icons/themify-icons.css);
+
 @import url(../css/icons/flag-icon-css/flag-icon.min.css);
 @import url(../css/icons/material-design-iconic-font/css/materialdesignicons.min.css);
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
@@ -1866,35 +1864,7 @@ File: scss
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-.right-side-toggle {
-  position: relative; }
 
-.right-side-toggle i {
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 1s;
-  -moz-transition-property: -moz-transform;
-  -moz-transition-duration: 1s;
-  transition-property: -webkit-transform;
-  -o-transition-property: transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
-  -webkit-animation-name: rotate;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: rotate;
-  -moz-animation-duration: 2s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  animation-name: rotate;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  position: absolute;
-  top: 18px;
-  left: 18px; }
 
 .right-sidebar {
   position: fixed;
@@ -1970,8 +1940,8 @@ ul#themecolors {
       color: transparent;
       position: relative; }
       ul#themecolors li a.working:before {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Free";
+        content: "\F12C";
+        font-family: "Material Design Icons";
         font-weight: 900;
         font-size: 18px;
         line-height: 50px;
