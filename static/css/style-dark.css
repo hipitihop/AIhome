@@ -65,7 +65,7 @@ Global Styles
   outline: none; }
 
 body {
-  background: #fff;
+  background: #383F48;
   font-family: "Poppins", sans-serif;
   margin: 0;
   overflow-x: hidden;
@@ -75,7 +75,7 @@ body {
 html {
   position: relative;
   min-height: 100%;
-  background: #ffffff; }
+  background: #383F48; }
 
 a:hover, a:focus {
   text-decoration: none; }
@@ -2046,7 +2046,7 @@ ul#themecolors {
   position: absolute;
   right: 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
-  background: #ffffff; }
+  background: #383F48; }
 
 /*******************
  Card title
