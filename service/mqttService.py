@@ -193,7 +193,7 @@ def handle_mqtt_message(client, userdata, message):
         if 'input' in payload:
             dic['intentinput'] = payload['input']
         if 'intentFilter' in payload:
-            dic['intentFilter'] = payload['intentFilter']
+            dic['intentFilter'] = str(payload['intentFilter'])
         if 'sendIntentNotRecognized' in payload:
             dic['sendIntentNotRecognized'] = payload['sendIntentNotRecognized']
         
@@ -207,7 +207,7 @@ def handle_mqtt_message(client, userdata, message):
             if 'canBeEnqueued' in payload['init']:
                 dic['canBeEnqueued'] = payload['init']['canBeEnqueued']
             if 'intentFilter' in payload['init']:
-                dic['intentFilter'] = payload['init']['intentFilter']
+                dic['intentFilter'] = str(payload['init']['intentFilter'])
             if 'sendIntentNotRecognized' in payload['init']:
                 dic['sendIntentNotRecognized'] = payload['init']['sendIntentNotRecognized']
 
