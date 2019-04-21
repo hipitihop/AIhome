@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
+import os
+
 ### **************************************************************************** ###
 ### Only change these setting for your setup
 ### **************************************************************************** ###
@@ -8,16 +10,16 @@
 # Port to run site on
 PORT = 80
 
-#Theme 
+#Theme
 #set inside the website settings from the top menu bar
 
 # MQTT
-MQTT_BROKER_URL = '10.0.1.100'  # broker url
-MQTT_BROKER_PORT = 1883  # default port for non-tls connection
+MQTT_BROKER_URL = os.getenv('MQTT_BROKER_URL')  # broker url
+MQTT_BROKER_PORT = int(os.getenv('MQTT_BROKER_PORT', 1883))  # default port for non-tls connection
 MQTT_USERNAME = ''  # set the username here if you need authentication for the broker
 MQTT_PASSWORD = ''  # set the password here if the broker demands authentication
 MQTT_KEEPALIVE = 60  # set the time interval for sending a ping to the broker to 5 seconds
-MQTT_TLS_ENABLED = False  
+MQTT_TLS_ENABLED = False
 
 
 

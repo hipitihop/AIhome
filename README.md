@@ -37,6 +37,15 @@ or
 To log in the default is **admin/admin**
 You can change the password inside the web console
 
+# Docker using docker-compose
+To run this within a Docker container, ignore above installation and running, and instead:
+- If docker-compose is not already installed, install docker-compose see: https://docs.docker.com/compose/install/
+- Update docker-compose.yml
+  - MQTT_BROKER_URL in docker-compose.yml to point at your broker.
+  - optionally change which port you want this app to be served on your host in (default 9000)
+- In this directory do: ```docker-compose up --build```
+- In a browser on your host, go to http://localhost:9000 or whatever port you configured.
+
 # Information
 
 As you start using your devices around the house, the system will start to build a list of sites and the logs will start to grow

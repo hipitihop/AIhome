@@ -1,0 +1,39 @@
+# Requirements:
+#  - docker-compose see: https://docs.docker.com/compose/install/ & https://docs.docker.com/compose/reference/
+# Builds and start a container in foreground allowing you to stop it via <CTRL><C>
+# NOTE: while stopped, any SNIPS activity across MQTT will be missing from watch log and overview stats.
+#  - docker-compose up --build
+# Build and start container detached. Use "docker-compose stop" to shut it down.
+#  - docker-compose up --build --detach
+# Stop container maintaining existing history
+#  - docker-compose stop
+#
+# Useful commands:
+#  To get shell within container (if container is already running, substitute "run" with "exec"
+#   - docker-compose run aihome bash
+#  To run python within container
+#   - docker-compose run aihome python
+#
+# TODO:
+# - To maintain history across builds, consider adding volumes, see docker-compose:
+#   https://docs.docker.com/compose/compose-file/#volumes
+
+version: "3.7"
+x-default: &default-env
+  environment:
+    # Change these to your MQTT broker, read by config.py
+    MQTT_BROKER_URL:  "192.168.0.13"
+    MQTT_BROKER_PORT: 1883
+services:
+  aihome:
+    <<: *default-env
+    build: .
+    ports:
+      # Remap container port 80 to your host machine.
+      # e.g. 9000:80 lets you access this container via url via http://localhost:9000/watch
+      - "9000:80"
+    init: true
+    # Uncomment the following and you container will always be restarted if it fails and across system reboots.
+    # This avoids having to do a compose-dev up each time, only initially when initially built or rebuilt.
+    #
+    # restart: always
